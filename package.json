@@ -1,0 +1,26 @@
+{
+  "name": "discord-token-checker",
+  "version": "1.0.0",
+  "description": "Ferramenta para verificar tokens do Discord, categorizando válidos, inválidos e não verificados.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "discord",
+    "token",
+    "verificador",
+    "checker",
+    "tokens"
+  ],
+  "author": "Yusuke",
+  "license": "MIT"
+}
