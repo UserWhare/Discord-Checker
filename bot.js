@@ -18,7 +18,6 @@ async function checar(token) {
     });
 
     if (resposta.status === 401) {
-      // Token inválido
       invalidos.push(token);
       await fs.appendFile(`${pastaSaida}/invalidos.txt`, token + '\n');
     } else if (resposta.ok) {
@@ -31,7 +30,6 @@ async function checar(token) {
         await fs.appendFile(`${pastaSaida}/verificados.txt`, token + '\n');
       }
     } else {
-      // Resposta inesperada, considerar inválido
       invalidos.push(token);
       await fs.appendFile(`${pastaSaida}/invalidos.txt`, token + '\n');
     }
