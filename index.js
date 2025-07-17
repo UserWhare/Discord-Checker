@@ -1,5 +1,5 @@
 import fs from 'fs/promises';
-import fsSync from 'fs'; // para ler config.json de forma síncrona
+import fsSync from 'fs'; 
 import path from 'path';
 import Bot from './bot.js';
 
@@ -8,7 +8,6 @@ const config = JSON.parse(fsSync.readFileSync('./config.json', 'utf-8'));
 const pastaSaida = 'output';
 
 async function iniciar() {
-  // Cria a pasta de saída caso não exista
   try {
     await fs.mkdir(pastaSaida);
   } catch (err) {
@@ -18,14 +17,12 @@ async function iniciar() {
     }
   }
 
-  // Limpa os arquivos de saída
   await Promise.all([
     fs.writeFile(path.join(pastaSaida, 'invalidos.txt'), ''),
     fs.writeFile(path.join(pastaSaida, 'verificados.txt'), ''),
     fs.writeFile(path.join(pastaSaida, 'naoVerificados.txt'), '')
   ]);
 
-  // Lê os tokens do arquivo e filtra linhas vazias
   let conteudo;
   try {
     conteudo = await fs.readFile('tokens.txt', 'utf-8');
